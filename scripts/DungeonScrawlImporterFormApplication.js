@@ -1,4 +1,4 @@
-import {DSI_SUBMENU, MODULE_ID} from "./settings"
+import {MODULE_ID} from "./settings.js"
 
 export class DungeonScrawlImporterFormApplication extends FormApplication {
     async _updateObject(event, formData) {
@@ -18,11 +18,39 @@ export class DungeonScrawlImporterFormApplication extends FormApplication {
         return options
     }
 
-    /** @override */
-    async getData(options = {}) {
-        const filePath = game.settings.get(MODULE_ID, DSI_SUBMENU)
-        return {
-            filePath: filePath
+    static parseShapes(shapes) {
+        let timesWritten = 0
+
+        shapes.forEach(function (level_1_value) {
+            level_1_value.forEach(function (level_2_value) {
+                level_2_value.forEach(function (connectedLine) {
+                    connectedLine.forEach(function (coordinates) {
+                        if (timesWritten > 20) {
+                            console.log(coordinates)
+                            return
+                        }
+                        timesWritten++
+                    })
+                })
+            })
+        })
+    }
+
+    loadFileContent() {
+        let file = document.getElementsByName("filePath")[0].files[0]
+        if (file) {
+            let reader = new FileReader()
+            reader.readAsText(file, "UTF-8");
+            reader.onload = function (evt) {
+                /** @type {{version: int, layerController: {assets: {}, config: {}, layers: {blendMode: string, config: {}, id: int, name: string, opacity: int, shape: {currentShapeIndex: int, shapeMemory: array}, type: int, unlinked: boolean, visible: boolean}[]}}} parsed */
+                const parsed = JSON.parse(evt.target.result)
+                const shapeMemory = parsed.layerController.layers[1].shape.shapeMemory
+                console.log(shapeMemory)
+                DungeonScrawlImporterFormApplication.parseShapes(shapeMemory)
+            }
+            reader.onerror = function () {
+                document.getElementById("fileContents").innerHTML = "error reading file"
+            }
         }
     }
 
@@ -31,11 +59,7 @@ export class DungeonScrawlImporterFormApplication extends FormApplication {
 
         html.find("button#processDSFile").click(async (event) => {
             event.preventDefault()
-            this.processFile()
+            this.loadFileContent()
         })
-    }
-
-    processFile() {
-        console.log("File Path: " + game.settings.get(MODULE_ID, DSI_FILE_PATH))
     }
 }

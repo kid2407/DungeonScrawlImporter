@@ -1,4 +1,4 @@
-import {registerSettings} from "./settings"
+import {registerSettings} from "./settings.js"
 
 Hooks.once('init', async function () {
     registerSettings()
@@ -7,7 +7,3 @@ Hooks.once('init', async function () {
 Hooks.once('ready', async function () {
     console.info("DungeonScrawlImporter ready.")
 })
-
-function processFile(filePath) {
-
-}
