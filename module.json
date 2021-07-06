@@ -1,33 +1,21 @@
 {
-  "name": "module",
-  "title": "New Module",
-  "description": "",
-  "version": "This is auto replaced",
+  "name": "dungeonScrawlImporter",
+  "title": "Dungeon Scrawl Importer",
+  "description": "A Foundry module to allow importing a .ds file generated with Dungeon Scrawl to automatically generate walls.",
+  "version": "1.0.0",
   "library": "false",
   "manifestPlusVersion": "1.0.0",
-  "minimumCoreVersion": "0.7.9",
-  "compatibleCoreVersion": "0.7.9",
+  "minimumCoreVersion": "0.8.0",
+  "compatibleCoreVersion": "0.8.8",
   "authors": [
     {
-      "name": "The League of Extraordinary FVTT Developers",
-      "url": "https://github.com/League-of-Foundry-Developers",
-      "discord": "discordID#0001"
+      "name": "Tobias Franz",
+      "url": "https://github.com/kid2407",
+      "discord": "kid2407 / Tobias#6450"
     }
-  ],
-  "dependencies": [
-
-  ],
-  "conflicts": [
-    
   ],
   "esmodules": [
     "/scripts/module.js"
-  ],
-  "scripts": [
-    "/scripts/lib/lib.js"
-  ],
-  "styles": [
-    "/styles/module.css"
   ],
   "languages": [
     {
@@ -36,13 +24,7 @@
       "path": "languages/en.json"
     }
   ],
-  "url": "This is auto replaced",
-  "manifest": "This is auto replaced",
-  "download": "This is auto replaced",
-  "media": [
-    {
-      "type": "icon",
-      "url": "https://avatars2.githubusercontent.com/u/71292812?s=400&u=ccdb4eeb7abf551ca8f314e5a9bfd0479a4d3d41&v=4"
-    }
-  ]
+  "url": "https://github.com/kid2407/DungeonScrawlImporter",
+  "manifest": "https://github.com/kid2407/DungeonScrawlImporter/releases/latest/download/module.json",
+  "download": "https://github.com/kid2407/DungeonScrawlImporter/releases/latest/download/module.zip"
 }

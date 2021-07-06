@@ -1,7 +1,3 @@
-Hooks.once('init', async function() {
-
-});
-
 Hooks.once('ready', async function() {
-
+    console.info("DungeonScrawlImporter ready.")
 });
