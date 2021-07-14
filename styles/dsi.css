@@ -6,8 +6,17 @@
     display: none;
     color:   red;
     padding: 10px;
+    border:  1px solid red;
 }
 
 #dsimportErrorMessage.visible {
     display: block;
+}
+
+#dungeonScrawlImporter-import-dialogue label, #dungeonScrawlImporter-import-dialogue input {
+    margin: 5px 0;
+}
+
+#dungeonScrawlImporter-import-dialogue h2 {
+    flex: unset;
 }

@@ -4,6 +4,10 @@
     <div class="form-content" style="display: flex">
         <input type="file" name="filePath" value="" accept=".ds,.DS"/>
     </div>
+    <label for="dsiImportOffsetX">{{offsetXText}}</label>
+    <input id="dsiImportOffsetX" type="number" placeholder="0">
+    <label for="dsiImportOffsetY">{{offsetYText}}</label>
+    <input id="dsiImportOffsetY" type="number" placeholder="0">
     <p id="dsimportErrorMessage"></p>
     <button id="processDSFile" type="submit">{{buttonText}}</button>
 </form>
