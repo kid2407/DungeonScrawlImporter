@@ -5,10 +5,10 @@ const DSI_SUBMENU = "dsi-submenu"
 
 export function registerSettings() {
     game.settings.registerMenu(MODULE_ID, DSI_SUBMENU, {
-        name      : "import",
-        label     : "Import Dialogue",      // The text label used in the button
-        hint      : "Import a Dungeon Scrawler file",
-        icon      : "fas fa-wrench",               // A Font Awesome icon used in the submenu button
+        name      : game.i18n.localize("DSI.config.importLabel"),
+        label     : game.i18n.localize("DSI.config.openImportDialogue"),      // The text label used in the button
+        hint      : game.i18n.localize("DSI.config.dialogueHint"),
+        icon      : "fas fa-upload",               // A Font Awesome icon used in the submenu button
         type      : DungeonScrawlImporterFormApplication,   // A FormApplication subclass which should be created
         restricted: true                   // Restrict this submenu to gamemaster only?
     })

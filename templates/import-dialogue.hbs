@@ -1,8 +1,9 @@
-<h2>Import a .DS file</h2>
+<h2>{{headline}}</h2>
 <form autocomplete="off">
-    <p>Choose a file to import:</p>
+    <p>{{chooseFile}}</p>
     <div class="form-content" style="display: flex">
-        <input class="setup-config" type="file" name="filePath" value="" accept=".ds,.DS"/>
+        <input type="file" name="filePath" value="" accept=".ds,.DS"/>
     </div>
-    <button id="processDSFile" type="submit">Import</button>
+    <p id="dsimportErrorMessage"></p>
+    <button id="processDSFile" type="submit">{{buttonText}}</button>
 </form>

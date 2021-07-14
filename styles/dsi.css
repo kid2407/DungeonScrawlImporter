@@ -1,0 +1,13 @@
+#processDSFile {
+    margin-top: 10px;
+}
+
+#dsimportErrorMessage {
+    display: none;
+    color:   red;
+    padding: 10px;
+}
+
+#dsimportErrorMessage.visible {
+    display: block;
+}

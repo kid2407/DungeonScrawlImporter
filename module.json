@@ -1,30 +1,33 @@
 {
-  "name": "dungeonScrawlImporter",
-  "title": "Dungeon Scrawl Importer",
-  "description": "A Foundry module to allow importing a .ds file generated with Dungeon Scrawl to automatically generate walls.",
-  "version": "1.0.0",
-  "library": "false",
-  "manifestPlusVersion": "1.0.0",
-  "minimumCoreVersion": "0.8.0",
-  "compatibleCoreVersion": "0.8.8",
-  "authors": [
-    {
-      "name": "Tobias Franz",
-      "url": "https://github.com/kid2407",
-      "discord": "kid2407 / Tobias#6450"
-    }
-  ],
-  "esmodules": [
-    "/scripts/module.js"
-  ],
-  "languages": [
-    {
-      "lang": "en",
-      "name": "English",
-      "path": "languages/en.json"
-    }
-  ],
-  "url": "https://github.com/kid2407/DungeonScrawlImporter",
-  "manifest": "https://github.com/kid2407/DungeonScrawlImporter/releases/latest/download/module.json",
-  "download": "https://github.com/kid2407/DungeonScrawlImporter/releases/latest/download/module.zip"
+    "name": "dungeonScrawlImporter",
+    "title": "Dungeon Scrawl Importer",
+    "description": "A Foundry module to allow importing a .ds file generated with Dungeon Scrawl to automatically generate walls.",
+    "version": "1.0.0",
+    "library": "false",
+    "manifestPlusVersion": "1.0.0",
+    "minimumCoreVersion": "0.8.0",
+    "compatibleCoreVersion": "0.8.8",
+    "authors": [
+        {
+            "name": "Tobias Franz",
+            "url": "https://github.com/kid2407",
+            "discord": "kid2407 / Tobias#6450"
+        }
+    ],
+    "esmodules": [
+        "scripts/module.js"
+    ],
+    "styles": [
+        "styles/dsi.css"
+    ],
+    "languages": [
+        {
+            "lang": "en",
+            "name": "English",
+            "path": "languages/en.json"
+        }
+    ],
+    "url": "https://github.com/kid2407/DungeonScrawlImporter",
+    "manifest": "https://github.com/kid2407/DungeonScrawlImporter/releases/latest/download/module.json",
+    "download": "https://github.com/kid2407/DungeonScrawlImporter/releases/latest/download/module.zip"
 }
