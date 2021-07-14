@@ -1,6 +1,6 @@
 import {DungeonScrawlImporterFormApplication} from "./DungeonScrawlImporterFormApplication.js"
 
-const MODULE_ID = "dungeonScrawlImporter"
+const MODULE_ID = "dungeon-scrawl-importer"
 const DSI_SUBMENU = "dsi-submenu"
 
 export function registerSettings() {
