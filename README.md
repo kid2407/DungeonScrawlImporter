@@ -10,3 +10,9 @@ The following features / bugs are known:
 * Detection of doors is not implemented
 * Overlapping Walls block of passages they shouldn't
 * The number of Walls is rather high, it is recommended to install [Merge Walls](https://foundryvtt.com/packages/mergewalls) and use it to reduce the wall count
+
+### Ko-Fi
+
+If you have read this far and want to show some more appreciation: I have a Ko-Fi, should you consider what I'm doing worth a little something. Of course I do not expect nor require anyone to use it, but I'll leave it here in case someone wants to give:
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/H2H7ALZTI)
