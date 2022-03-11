@@ -94,18 +94,17 @@ export class DungeonScrawlImporterFormApplication extends FormApplication {
 
         console.log("START - Shift coordinates into scene")
 
-        let mostNegativeX = Math.min(...uniqueWallData.map(value => value.c[0]), ...uniqueWallData.map(value => value.c[2]), 0)
-        let mostNegativeY = Math.min(...uniqueWallData.map(value => value.c[1]), ...uniqueWallData.map(value => value.c[3]), 0)
 
-        if (mostNegativeX < 0 || mostNegativeY < 0) {
-            uniqueWallData = uniqueWallData.map(value => {
-                value.c[0] = value.c[0] + mostNegativeX * -1 + sceneCellSize * offsetX
-                value.c[1] = value.c[1] + mostNegativeY * -1 + sceneCellSize * offsetY
-                value.c[2] = value.c[2] + mostNegativeX * -1 + sceneCellSize * offsetX
-                value.c[3] = value.c[3] + mostNegativeY * -1 + sceneCellSize * offsetY
-                return value
-            })
-        }
+        let mostNegativeX = Math.min(...uniqueWallData.map(value => value.c[0]), ...uniqueWallData.map(value => value.c[2]))
+        let mostNegativeY = Math.min(...uniqueWallData.map(value => value.c[1]), ...uniqueWallData.map(value => value.c[3]))
+
+        uniqueWallData = uniqueWallData.map(value => {
+            value.c[0] = value.c[0] + sceneCellSize * offsetX + mostNegativeX * -1
+            value.c[1] = value.c[1] + sceneCellSize * offsetY + mostNegativeY * -1
+            value.c[2] = value.c[2] + sceneCellSize * offsetX + mostNegativeX * -1
+            value.c[3] = value.c[3] + sceneCellSize * offsetY + mostNegativeY * -1
+            return value
+        })
 
         console.log("END - Shift coordinates into scene")
 
