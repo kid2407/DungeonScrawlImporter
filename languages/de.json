@@ -1,24 +1,20 @@
 {
-    "DSI": {
-        "import": {
-            "import": "Import",
-            "inprogress": "Wird verarbeitet&hellip;",
-            "parsingfile": "Verarbeite Datei und erzeuge W&auml;nde&hellip;",
-            "finished": "Import erfolgreich!",
-            "headline": "Eine .DS Datei importieren",
-            "chooseFile": "W&auml;hle die hochzuladene Datei aus:",
-            "offsetX": "Abstand nach links in Gitterzellen",
-            "offsetY": "Abstand nach oben in Gitterzellen",
-            "error": {
-                "invalidFile": "Konnte die gew&auml;hlte Datei nicht verarbeiten.<br>Detaillierte Fehlernachricht: ",
-                "fileType": "Die ausgew&auml;hlte Datei ist keine g&uuml;ltige :ds Datei<br>Detaillierte Fehlernachricht: ",
-                "noFile": "Keine Datei ausgew&auml;hlt."
-            }
-        },
-        "config": {
-            "importLabel": "Dateiimport",
-            "openImportDialogue": "Dialog &ouml;ffnen",
-            "dialogueHint": "Eine Dungeon Scrawl Datei importieren"
-        }
+  "DSI": {
+    "button": "DS Datei importieren",
+    "import": {
+      "import": "Import",
+      "inprogress": "Wird verarbeitet&hellip;",
+      "parsingfile": "Verarbeite Datei und erzeuge W&auml;nde&hellip;",
+      "finished": "Import erfolgreich!",
+      "headline": "Eine .DS Datei importieren",
+      "chooseFile": "W&auml;hle die hochzuladene Datei aus:",
+      "offsetX": "Abstand nach links in Gitterzellen",
+      "offsetY": "Abstand nach oben in Gitterzellen",
+      "error": {
+        "invalidFile": "Konnte die gew&auml;hlte Datei nicht verarbeiten.<br>Detaillierte Fehlernachricht: ",
+        "fileType": "Die ausgew&auml;hlte Datei ist keine g&uuml;ltige :ds Datei<br>Detaillierte Fehlernachricht: ",
+        "noFile": "Keine Datei ausgew&auml;hlt."
+      }
     }
+  }
 }

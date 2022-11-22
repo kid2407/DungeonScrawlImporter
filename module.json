@@ -1,38 +1,44 @@
 {
-    "name": "dungeon-scrawl-importer",
-    "title": "Dungeon Scrawl Importer",
-    "description": "A Foundry module to allow importing a .ds file generated with Dungeon Scrawl to automatically generate walls.",
-    "version": "1.2.0",
-    "library": "false",
-    "manifestPlusVersion": "1.2.0",
-    "minimumCoreVersion": "0.8.0",
-    "compatibleCoreVersion": "9",
-    "authors": [
-        {
-            "name": "Tobias Franz",
-            "url": "https://github.com/kid2407",
-            "discord": "kid2407 / Tobias#6450"
-        }
-    ],
-    "esmodules": [
-        "scripts/module.js"
-    ],
-    "styles": [
-        "styles/dsi.css"
-    ],
-    "languages": [
-        {
-            "lang": "en",
-            "name": "English",
-            "path": "languages/en.json"
-        },
-        {
-            "lang": "de",
-            "name": "Deutsch",
-            "path": "languages/de.json"
-        }
-    ],
-    "url": "https://github.com/kid2407/DungeonScrawlImporter",
-    "manifest": "https://github.com/kid2407/DungeonScrawlImporter/releases/latest/download/module.json",
-    "download": "https://github.com/kid2407/DungeonScrawlImporter/releases/latest/download/module.zip"
+  "name": "dungeon-scrawl-importer",
+  "title": "Dungeon Scrawl Importer",
+  "description": "A Foundry module to allow importing a .ds file generated with Dungeon Scrawl to automatically generate walls.",
+  "version": "1.3.0",
+  "library": "false",
+  "manifestPlusVersion": "1.3.0",
+  "minimumCoreVersion": "10",
+  "compatibility": {
+    "minimum": 10,
+    "verified": 10
+  },
+  "authors": [
+    {
+      "name": "Tobias Franz",
+      "url": "https://github.com/kid2407",
+      "email": "cinex.mail@web.de"
+    }
+  ],
+  "scripts": [
+    "/lib/jszip.min.js"
+  ],
+  "esmodules": [
+    "scripts/module.js"
+  ],
+  "styles": [
+    "styles/dsi.css"
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "languages/en.json"
+    },
+    {
+      "lang": "de",
+      "name": "Deutsch",
+      "path": "languages/de.json"
+    }
+  ],
+  "url": "https://github.com/kid2407/DungeonScrawlImporter",
+  "manifest": "https://github.com/kid2407/DungeonScrawlImporter/releases/latest/download/module.json",
+  "download": "https://github.com/kid2407/DungeonScrawlImporter/releases/latest/download/module.zip"
 }

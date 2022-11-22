@@ -1,9 +1,17 @@
-import {registerSettings} from "./settings.js"
+import {DungeonScrawlImporterFormApplication} from "./DungeonScrawlImporterFormApplication.js"
 
-Hooks.once('init', async function () {
-    registerSettings()
-})
+Hooks.on('renderSidebarTab', async function (app, html) {
+    if (app.options.id === "scenes" && game.user.isGM) {
+        let button = $(`<div class='header-actions action-buttons flexrow'><button><i class='fas fa-file-import'></i> ${game.i18n.localize("DSI.button")}</button></div>`)
+        button.on('click', async () => {
+            if (!game.users.current.isGM) {
+                return false
+            }
 
-Hooks.once('ready', async function () {
-    console.info("DungeonScrawlImporter ready.")
+            let dialog = new DungeonScrawlImporterFormApplication()
+            return dialog.render(true)
+        })
+
+        $(html).find('.directory-header').prepend(button)
+    }
 })

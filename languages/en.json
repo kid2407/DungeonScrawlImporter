@@ -1,24 +1,20 @@
 {
-    "DSI": {
-        "import": {
-            "import": "Import",
-            "inprogress": "Processing&hellip;",
-            "parsingfile": "Parsing file and creating walls&hellip;",
-            "finished": "Import finished!",
-            "headline": "Import a .DS file",
-            "chooseFile": "Choose a file to import:",
-            "offsetX": "X Offset in grid cells:",
-            "offsetY": "Y Offset in grid cells:",
-            "error": {
-                "invalidFile": "Could not read the chosen file.<br>Detailed error message: ",
-                "fileType": "The selected file is not a valid .DS file.<br>Detailed error message: ",
-                "noFile": "No file selected."
-            }
-        },
-        "config": {
-            "importLabel": "Import file",
-            "openImportDialogue": "Open Dialogue",
-            "dialogueHint": "Import a Dungeon Scrawler file"
-        }
+  "DSI": {
+    "button": "Import DS file",
+    "import": {
+      "import": "Import",
+      "inprogress": "Processing&hellip;",
+      "parsingfile": "Parsing file and creating walls&hellip;",
+      "finished": "Import finished!",
+      "headline": "Import a .DS file",
+      "chooseFile": "Choose a file to import:",
+      "offsetX": "X Offset in grid cells:",
+      "offsetY": "Y Offset in grid cells:",
+      "error": {
+        "invalidFile": "Could not read the chosen file.<br>Detailed error message: ",
+        "fileType": "The selected file is not a valid .DS file.<br>Detailed error message: ",
+        "noFile": "No file selected."
+      }
     }
+  }
 }
