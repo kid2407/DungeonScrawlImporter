@@ -8,8 +8,8 @@ Foundry module to allow importing a .ds file generated with Dungeon Scrawl to au
 
 The following features / bugs are known:
 * Detection of doors is not implemented
-* Overlapping Walls block of passages they shouldn't
-* The number of Walls is rather high, it is recommended to install [Merge Walls](https://foundryvtt.com/packages/mergewalls) and use it to reduce the wall count
+* ~~Overlapping Walls block of passages they shouldn't~~ Should be fixed now because of the new file format - let me know if that is not the case
+* ~~The number of Walls is rather high, it is recommended to install [Merge Walls](https://foundryvtt.com/packages/mergewalls) and use it to reduce the wall count~~ With the new file format there aren't really any unneccessary walls - let me know if that is not the case
 
 ### Ko-Fi
 
