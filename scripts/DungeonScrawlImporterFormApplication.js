@@ -34,11 +34,12 @@ export class DungeonScrawlImporterFormApplication extends FormApplication {
 
     /**
      * @param {Object} shapes
+     * @param {Array} doorIds
      * @param {int} gridCellSize
      * @param {int} offsetX
      * @param {int} offsetY
      */
-    async parseShapes(shapes, gridCellSize, offsetX, offsetY) {
+    async parseShapes(shapes, doorIds, gridCellSize, offsetX, offsetY) {
         let wallData          = []
         // noinspection JSValidateTypes
         let currentScene      = game.scenes.current
@@ -47,6 +48,7 @@ export class DungeonScrawlImporterFormApplication extends FormApplication {
         const gridFactor      = sceneCellSize / gridCellSize
         for (let k in shapes) {
             if (shapes.hasOwnProperty(k)) {
+                let isDoor = doorIds.includes(k)
                 let element   = shapes[k]
                 let validKeys = ['polygons', 'polylines']
                 validKeys.forEach((prop) => {
@@ -72,7 +74,8 @@ export class DungeonScrawlImporterFormApplication extends FormApplication {
                                                           lastPoint[1],
                                                           coordinates[0],
                                                           coordinates[1],
-                                                      ]
+                                                      ],
+                                                      'Door': isDoor ? CONST.WALL_DOOR_TYPES.DOOR : CONST.WALL_DOOR_TYPES.NONE
                                                   })
                                 }
                                 lastPoint = coordinates
@@ -118,6 +121,16 @@ export class DungeonScrawlImporterFormApplication extends FormApplication {
         // noinspection JSUnresolvedFunction
         await game.scenes.current.createEmbeddedDocuments("Wall", uniqueWallData)
     }
+    /**
+     * @param {Object} dataNodes
+     */
+    getDoorIds(dataNodes) {
+        let doorIds = dataNodes
+        for (let node in dataNodes) {
+            if (node.name === "Door") doorIds.push(node.id)
+        }
+        return doorIds
+    }
 
     /**
      * @param {int} offsetX
@@ -136,11 +149,12 @@ export class DungeonScrawlImporterFormApplication extends FormApplication {
 
             let geometryData = data.data.geometry
             let dataNodes    = data.state.document.nodes
+            let doorIds      = self.getDoorIds(dataNodes)
             let doc          = dataNodes.document
             let gridCellSize = dataNodes[doc.children[0]].grid.cellDiameter
 
             self.updateButtonStatus(game.i18n.localize("DSI.import.parsingfile"), true)
-            await self.parseShapes(geometryData, gridCellSize, offsetX, offsetY)
+            await self.parseShapes(geometryData, doorIds, gridCellSize, offsetX, offsetY)
             self.updateButtonStatus(game.i18n.localize("DSI.import.finished"))
         }
         else {
