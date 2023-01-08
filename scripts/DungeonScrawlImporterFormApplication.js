@@ -50,25 +50,34 @@ export class DungeonScrawlImporterFormApplication extends FormApplication {
             let isDoor = doorIds.includes(k)
             if (!shapes.hasOwnProperty(k)) continue
             let element   = shapes[k]
+            //If the element is a door the shape has to be reduced to a single segment to work properly as a foundry door.
             if (isDoor) {
                 let doorVariant = 1
                 if (element.polylines.length > 0) doorVariant = 0
-
+                
+                //For this variant the desired segment can be constructed by simply connecting the first point of the first polyline and the last point of the second polyline.
                 if (doorVariant == 0) {
                     delete element.polygons
                     element.polylines = [[element.polylines[0][0], element.polylines[1][1]]]
                 }
+                //For this variant the desired segment can be constructed by shifting one of the long edges of the rectangular polygon.
                 else if (doorVariant == 1) {
+                    //Determine the side lengths of the rectangular polygon.
                     let doorLengths2 = []
                     for (let i = 0; i < element.polygons[0][0].length; i++) {
                         let doorLength2 = ((element.polygons[0][0][(i+1)%(element.polygons[0][0].length)][0] - element.polygons[0][0][i][0])**2 + (element.polygons[0][0][(i+1)%(element.polygons[0][0].length)][1] - element.polygons[0][0][i][1])**2)
                         doorLengths2.push(doorLength2)
                     }
+                    //Grab one of the long sides of the rectangular polygon.
                     let longestSideIndex = doorLengths2.indexOf(Math.max(...doorLengths2))
                     let longestSide = [[element.polygons[0][0][longestSideIndex][0], element.polygons[0][0][longestSideIndex][1]],[element.polygons[0][0][(longestSideIndex+1)%(element.polygons[0][0].length)][0], element.polygons[0][0][(longestSideIndex+1)%(element.polygons[0][0].length)][1]]]
+                    
+                    //Grab the next side over relative to the long side. Since the shape is always a rectangle this must be a short side.
                     let shortestSide = [[element.polygons[0][0][(longestSideIndex+1)%(element.polygons[0][0].length)][0], element.polygons[0][0][(longestSideIndex+1)%(element.polygons[0][0].length)][1]],[element.polygons[0][0][(longestSideIndex+2)%(element.polygons[0][0].length)][0], element.polygons[0][0][(longestSideIndex+2)%(element.polygons[0][0].length)][1]]]
+                    //Determine the x,y offset, which is the difference between a point and a midway point along the short side.
                     let shortestSideMidPoint = [(shortestSide[0][0] + shortestSide[1][0])/2, (shortestSide[0][1] + shortestSide[1][1])/2]
                     let offset = [shortestSide[0][0] - shortestSideMidPoint[0], shortestSide[0][1] - shortestSideMidPoint[1]]
+                    //Override the element's polygon to only include this single line segment, which is one of the long sides shifted by the previously determined offset along a short side.
                     element.polygons[0][0] = [[longestSide[0][0] - offset[0], longestSide[0][1] - offset[1]],[longestSide[1][0] - offset[0], longestSide[1][1] - offset[1]]]
                 }
             }
@@ -90,6 +99,7 @@ export class DungeonScrawlImporterFormApplication extends FormApplication {
                                 side[0] * gridFactor,
                                 side[1] * gridFactor
                             ]
+                            //Save the first point to connect with the last point later
                             if (lastPoint.length == 0 && prop == 'polygons') {
                                 firstPoint = coordinates
                             }
@@ -106,6 +116,7 @@ export class DungeonScrawlImporterFormApplication extends FormApplication {
                             }
                             lastPoint = coordinates
                         })
+                        //Connect the last point back to the first point to complete the polygon shape.
                         if (prop == 'polygons') {
                             wallData.push({
                                 c: [
