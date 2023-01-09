@@ -77,8 +77,10 @@ export class DungeonScrawlImporterFormApplication extends FormApplication {
                     //Determine the x,y offset, which is the difference between a point and a midway point along the short side.
                     let shortestSideMidPoint = [(shortestSide[0][0] + shortestSide[1][0])/2, (shortestSide[0][1] + shortestSide[1][1])/2]
                     let offset = [shortestSide[0][0] - shortestSideMidPoint[0], shortestSide[0][1] - shortestSideMidPoint[1]]
-                    //Override the element's polygon to only include this single line segment, which is one of the long sides shifted by the previously determined offset along a short side.
-                    element.polygons[0][0] = [[longestSide[0][0] - offset[0], longestSide[0][1] - offset[1]],[longestSide[1][0] - offset[0], longestSide[1][1] - offset[1]]]
+                    //Set the element's polyline to this single line segment, which is one of the long sides shifted by the previously determined offset along a short side.
+                    element.polylines[0] = [[longestSide[0][0] - offset[0], longestSide[0][1] - offset[1]],[longestSide[1][0] - offset[0], longestSide[1][1] - offset[1]]]
+                    //Delete the polygon.
+                    delete element.polygons
                 }
             }
             let validKeys = ['polygons', 'polylines']
