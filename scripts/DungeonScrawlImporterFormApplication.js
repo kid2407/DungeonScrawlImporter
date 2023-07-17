@@ -88,10 +88,14 @@ export class DungeonScrawlImporterFormApplication extends FormApplication {
             if (stairsIds.includes(k)) continue
             if (element.hasOwnProperty('polylines')) {
                 element['polylines'].forEach((side) => {
-                    wallData.push({
-                        c: [ side[0][0] * gridFactor, side[0][1] * gridFactor, side[1][0] * gridFactor, side[1][1] * gridFactor ],
-                        'door': isDoor,
-                    })
+                    //Each sequential pair of points is a possible line, and
+                    //some of them won't have any length, so won't appear
+                    for(let i = 0; i + 1 < side.length; i = i + 1) {
+                        wallData.push({
+                            c: [ side[i][0] * gridFactor, side[i][1] * gridFactor, side[i+1][0] * gridFactor, side[i+1][1] * gridFactor ],
+                            'door': isDoor,
+                        })
+                    }
                 })
             }
             if (element.hasOwnProperty('polygons')) {
