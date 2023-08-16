@@ -6,10 +6,7 @@
 
 Foundry module to allow importing a .ds file generated with Dungeon Scrawl to automatically generate walls.
 
-The following features / bugs are known:
-* Detection of doors is not implemented
-* ~~Overlapping Walls block of passages they shouldn't~~ Should be fixed now because of the new file format - let me know if that is not the case
-* ~~The number of Walls is rather high, it is recommended to install [Merge Walls](https://foundryvtt.com/packages/mergewalls) and use it to reduce the wall count~~ With the new file format there aren't really any unneccessary walls - let me know if that is not the case
+Simply export your Dungeon Scrawl file as an image and as a .ds file. Then create a scene in FOundry with the image and import the .ds file with thew button at the top of the scene sidebar.
 
 ### Ko-Fi
 
