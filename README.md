@@ -6,7 +6,9 @@
 
 Foundry module to allow importing a .ds file generated with Dungeon Scrawl to automatically generate walls.
 
-Simply export your Dungeon Scrawl file as an image and as a .ds file. Then create a scene in FOundry with the image and import the .ds file with thew button at the top of the scene sidebar.
+Simply export your Dungeon Scrawl file as an image and as a .ds file. Then create a scene in Foundry with the image and import the .ds file with thew button at the top of the scene sidebar.
+
+If you have a Dungeon Scrawl pro subscription, the importer now also allows to import the lights you place as light sources in Foundry, including all the attributes you could ever need.
 
 ### Ko-Fi
 
