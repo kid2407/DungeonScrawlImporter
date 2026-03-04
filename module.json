@@ -1,14 +1,14 @@
 {
-  "name": "dungeon-scrawl-importer",
+  "id": "dungeon-scrawl-importer",
   "title": "Dungeon Scrawl Importer",
   "description": "A Foundry module to allow importing a .ds file generated with Dungeon Scrawl to automatically generate walls.",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "library": "false",
-  "manifestPlusVersion": "1.5.0",
-  "minimumCoreVersion": "10",
+  "manifestPlusVersion": "1.5.1",
   "compatibility": {
-    "minimum": 10,
-    "verified": 11
+    "minimum": "10",
+    "verified": "13",
+    "maximum": "13"
   },
   "authors": [
     {
